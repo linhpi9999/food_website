@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Liên hệ & Đặt hàng | Nem Xanh</title>
+  <meta name="description" content="Liên hệ Nem Xanh để đặt nem chua, giò lụa, chả… giao nhanh, đóng gói sạch." />
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+
+<body>
+  <a class="skip-link" href="#main">Bỏ qua điều hướng</a>
+
+  <header class="header" role="banner">
+    <div class="container header__inner">
+      <a class="brand" href="index.html" aria-label="Trang chủ Nem Xanh">
+        <span class="brand__mark" aria-hidden="true">🍃</span>
+        <span class="brand__text">
+          <strong>Nem Xanh</strong>
+          <small>Thực phẩm xanh sạch</small>
+        </span>
+      </a>
+
+      <nav class="nav" aria-label="Điều hướng chính">
+        <button class="nav__toggle" type="button" aria-expanded="false" aria-controls="navMenu">
+          <span class="nav__toggle-lines" aria-hidden="true"></span>
+          <span class="sr-only">Mở menu</span>
+        </button>
+
+        <div id="navMenu" class="nav__menu">
+          <a class="nav__link" href="index.html">Trang chủ</a>
+          <a class="nav__link" href="products.html">Sản phẩm</a>
+          <a class="nav__link is-active" href="contact.html">Liên hệ</a>
+          <a class="btn btn--primary nav__cta" href="#order">Đặt hàng</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="page-head">
+      <div class="container page-head__grid">
+        <div>
+          <h1 class="page-head__title">Liên hệ & Đặt hàng</h1>
+          <p class="page-head__desc">
+            Điền form hoặc gọi trực tiếp. Chúng tôi phản hồi sớm trong giờ làm việc.
+          </p>
+        </div>
+        <div class="page-head__chips">
+          <a class="chip" href="tel:+84000000000">📞 Gọi ngay</a>
+          <a class="chip" href="#">💬 Zalo</a>
+          <a class="chip" href="products.html">🧺 Xem sản phẩm</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="order">
+      <div class="container contact">
+        <div class="card contact__info">
+          <h2 class="section__title">Thông tin cửa hàng</h2>
+          <ul class="footer__info">
+            <li><strong>Hotline:</strong> <a href="tel:+84000000000">0xxx xxx xxx</a></li>
+            <li><strong>Zalo:</strong> <a href="#">zalo.me/…</a></li>
+            <li><strong>Địa chỉ:</strong> (Điền địa chỉ)</li>
+            <li><strong>Giờ mở cửa:</strong> 7:00 – 20:00</li>
+          </ul>
+
+          <div class="map">
+            <!-- Thay bằng iframe Google Maps nếu muốn -->
+            <div class="map__placeholder" aria-label="Bản đồ (placeholder)">
+              <p><strong>Bản đồ</strong></p>
+              <p>Chèn Google Maps iframe tại đây</p>
+            </div>
+          </div>
+        </div>
+
+        <form class="card form" action="#" method="post">
+          <h2 class="section__title">Gửi yêu cầu đặt hàng</h2>
+          <p class="section__subtitle">Thông tin càng rõ, tư vấn càng nhanh.</p>
+
+          <div class="form__grid">
+            <label class="field">
+              <span class="field__label">Họ và tên</span>
+              <input class="field__input" name="name" type="text" placeholder="Ví dụ: Nguyễn Văn A" required />
+            </label>
+
+            <label class="field">
+              <span class="field__label">Số điện thoại</span>
+              <input class="field__input" name="phone" type="tel" placeholder="0xxx xxx xxx" required />
+            </label>
+
+            <label class="field field--full">
+              <span class="field__label">Sản phẩm cần đặt</span>
+              <input class="field__input" name="items" type="text" placeholder="Nem chua 2 gói, giò lụa 1kg..." required />
+            </label>
+
+            <label class="field field--full">
+              <span class="field__label">Địa chỉ giao hàng</span>
+              <input class="field__input" name="address" type="text" placeholder="Số nhà, đường, phường/xã, quận/huyện..." />
+            </label>
+
+            <label class="field field--full">
+              <span class="field__label">Ghi chú</span>
+              <textarea class="field__input" name="note" rows="4" placeholder="Thời gian giao, yêu cầu cắt lát, hóa đơn..."></textarea>
+            </label>
+          </div>
+
+          <div class="form__actions">
+            <button class="btn btn--primary" type="submit">Gửi yêu cầu</button>
+            <a class="btn btn--ghost" href="tel:+84000000000">Gọi đặt nhanh</a>
+          </div>
+
+          <p class="hint">Form demo (tĩnh). Muốn gửi thật qua email/Zalo/Firebase/Backend mình có thể hướng dẫn tích hợp.</p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer" role="contentinfo">
+    <div class="container footer__bottom">
+      <p>© <span id="year"></span> Nem Xanh. All rights reserved.</p>
+      <p class="footer__note"><a href="index.html">Về trang chủ</a></p>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js" defer></script>
+</body>
+</html>
