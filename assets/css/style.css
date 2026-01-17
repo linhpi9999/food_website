@@ -3,7 +3,8 @@
    ========================= */
 
 :root{
-  --bg: #f6fbf8;
+  --bg: #eef9f3;
+  --gutter: 12px;
   --surface: #ffffff;
   --card: #ffffff;
   --card-strong: #ffffff;
@@ -33,7 +34,7 @@ body{
   background:
     radial-gradient(900px 520px at 12% -15%, rgba(20,184,106,.16), transparent 55%),
     radial-gradient(900px 520px at 92% 0%, rgba(38,224,138,.10), transparent 60%),
-    linear-gradient(180deg, #f6fbf8 0%, #f3faf6 40%, #f6fbf8 100%);
+    linear-gradient(180deg, #eef9f3 0%, #e8f6ef 40%, #eef9f3 100%);
   line-height:1.55;
 }
 
@@ -42,8 +43,9 @@ a{ color: inherit; text-decoration: none; }
 a:hover{ text-decoration: none; }
 
 .container{
-  width: min(var(--container), calc(100% - 40px));
+  width: min(var(--container), 100%);
   margin-inline: auto;
+  padding-inline: var(--gutter);
 }
 
 .sr-only{
@@ -164,12 +166,20 @@ a:hover{ text-decoration: none; }
 }
 
 /* Sections */
-.section{ padding: 64px 0; }
+/* Make sure each section has an opaque background so the page background
+   doesn't show through and create seams between blocks. */
+.section{
+  padding: 64px 0;
+  background-color: var(--bg);
+}
 .section--alt{
-  background: linear-gradient(180deg, rgba(20,184,106,.06), rgba(255,255,255,0));
+  background-color: #ffffff;
+  /* stronger alternating tint (still subtle) */
+  background-image: linear-gradient(180deg, rgba(20,184,106,.10) 0%, rgba(20,184,106,.04) 100%);
   border-top: 1px solid rgba(12,22,17,.08);
   border-bottom: 1px solid rgba(12,22,17,.08);
 }
+
 .section__head{ margin-bottom: 18px; }
 .section__title{
   margin: 0 0 8px;
@@ -179,8 +189,19 @@ a:hover{ text-decoration: none; }
 .section__subtitle{ margin:0; color: var(--muted); max-width: 70ch; }
 .section__foot{ margin-top: 18px; }
 
+
+/* Divider between hero and first section */
+.section-divider{
+  height: 1px;
+  width: 100%;
+  background: linear-gradient(90deg, transparent, rgba(12,22,17,.14), transparent);
+  margin: 0 0 22px;
+}
 /* Hero */
-.hero{ padding: 50px 0 18px; }
+.hero{
+  padding: 50px 0 18px;
+  background-color: var(--bg);
+}
 .hero__grid{
   display:grid;
   grid-template-columns: 1.15fr .85fr;
@@ -205,16 +226,20 @@ a:hover{ text-decoration: none; }
 }
 .hero__title{
   margin:0 0 12px;
-  font-size: clamp(28px, 4.3vw, 46px);
+  font-size: clamp(26px, 4.3vw, 46px);
   line-height: 1.08;
   letter-spacing: -0.6px;
 }
-.hero__title-accent{ color: rgba(20,184,106,.95); }
+.hero__title-accent{ 
+  color: rgba(20,184,106,.95); 
+  font-size: clamp(26px, 4.3vw, 46px);
+  letter-spacing: -2.6px;
+}
 .hero__desc{
   margin:0 0 18px;
   color: var(--muted);
   font-size: 16px;
-  max-width: 62ch;
+  max-width: 74ch;
 }
 .hero__actions{ display:flex; gap:12px; flex-wrap: wrap; margin-bottom: 18px; }
 
@@ -258,7 +283,7 @@ a:hover{ text-decoration: none; }
 .hero__image::after{
   content:"";
   position:absolute; inset:0;
-  background: linear-gradient(180deg, rgba(255,255,255,0) 35%, rgba(246,251,248,.65) 100%);
+  background: linear-gradient(180deg, rgba(255,255,255,0) 35%, rgba(238,249,243,.70) 100%);
 }
 .hero__card{
   position:absolute;
@@ -450,7 +475,7 @@ a:hover{ text-decoration: none; }
 .map__placeholder{
   border-radius: 18px;
   border: 1px dashed rgba(12,22,17,.18);
-  padding: 18px;
+  padding: 111px;
   color: var(--muted);
   background: rgba(255,255,255,.70);
 }
@@ -530,6 +555,7 @@ a:hover{ text-decoration: none; }
 
 /* Responsive */
 @media (max-width: 980px){
+  :root{ --gutter: 10px; }
   .hero__grid{ grid-template-columns: 1fr; }
   .hero__image{ height: 360px; }
   .grid--3{ grid-template-columns: repeat(2, minmax(0, 1fr)); }
@@ -540,6 +566,7 @@ a:hover{ text-decoration: none; }
 }
 
 @media (max-width: 720px){
+  :root{ --gutter: 8px; }
   .nav__toggle{ display:inline-flex; }
   .nav__menu{
     position:absolute;
