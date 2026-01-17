@@ -7,7 +7,7 @@ Website bán **giò chả truyền thống** được xây dựng nhằm giới 
 ## 📌 Mục tiêu dự án
 
 - Xây dựng website bán giò chả **đơn giản – dễ dùng – tối ưu trải nghiệm người dùng**
-- Giới thiệu sản phẩm rõ ràng: giò lụa, chả quế, giò bò, combo quà biếu
+- Giới thiệu sản phẩm rõ ràng: giò lụa, chả quế, giò bò, chả cốm, combo quà biếu
 - Hỗ trợ đặt hàng nhanh, phù hợp với hộ kinh doanh nhỏ & gia đình
 - Có thể mở rộng trong tương lai (thanh toán online, quản lý đơn hàng, CRM…)
 
